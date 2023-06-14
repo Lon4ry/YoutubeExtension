@@ -3,7 +3,7 @@ setTimeout(() => {
     const formattedSubscriptions = Array.from(subscriptions).map(subscription => subscription.querySelector('#channel-title').querySelector('#text').textContent)
     localStorage.setItem('subscriptions', JSON.stringify(formattedSubscriptions))
     getVideo()
-}, 1500)
+}, 250)
 
 const getVideo = () => {
     const subscriptions = JSON.parse(localStorage.getItem('subscriptions'))

@@ -9,4 +9,4 @@ setTimeout(() => {
     })
     localStorage.setItem('videos', JSON.stringify(formattedVideos))
     window.location.replace('/feed/channels')
-}, 1500)
+}, 250)
