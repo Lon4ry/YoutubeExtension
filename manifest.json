@@ -2,19 +2,28 @@
   "manifest_version": 3,
   "name": "Youtube Extension",
   "version": "1.0",
-
   "description": "https://youtube.localhost/",
   "icons": {},
-
+  "action": {
+    "default_popup": "popup.html"
+  },
   "permissions": [
-    "activeTab", "scripting", "tabs", "webNavigation", "storage"
+    "activeTab",
+    "scripting",
+    "tabs",
+    "webNavigation",
+    "storage"
   ],
-  "host_permissions": ["https://*.youtube.com/*"],
-  "background":{
+  "host_permissions": [
+    "https://*.youtube.com/*"
+  ],
+  "background": {
     "service_worker": "service-worker.js",
     "type": "module"
   },
   "externally_connectable": {
-    "matches": ["https://*.youtube.com/*"]
+    "matches": [
+      "https://*.youtube.com/*"
+    ]
   }
 }
