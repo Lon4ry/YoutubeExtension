@@ -19,8 +19,8 @@ const getSubscriptions = () => {
 chrome.tabs.onUpdated.addListener(async (tabId, changeInfo, tab) => {
     const state = await chrome.storage.local.get('videos')
     if (tab.url === 'https://youtube.localhost/' && tab.active && changeInfo.status === 'complete') {
-        chrome.tabs.remove(tab.id).then()
         chrome.tabs.create({url: 'https://www.youtube.com/feed/history'}).then(() => chrome.webNavigation.onCompleted.addListener(getVideos))
+        chrome.tabs.remove(tab.id).then()
     } else if (changeInfo.url === 'https://www.youtube.com/feed/channels' && state['videos']) {
         console.log(true)
         await chrome.storage.local.remove('videos');
